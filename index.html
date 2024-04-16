@@ -26,10 +26,25 @@
     <div class="main-container">
       <div class="container-left">
         <div class="bill-total">
-          <label for=""><p>Bill</p></label>
+          <label for=""><p>Bill Total</p></label>
           <input type="number" placeholder="0" data-bill-total />
           <p class="dollar-sign">$</p>
         </div>
+
+        <div class="no-of-people">
+          <div class="no-of-people-line">
+            <p>Number of People</p>
+            <div class="error">Can't be zero</div>
+          </div>
+
+          <input
+            class="no-of-people-input"
+            data-no-of-people
+            type="number"
+            placeholder="0"
+          />
+        </div>
+
         <div class="select-tip">
           <p>Select Tip %</p>
           <div class="btn-container">
@@ -58,20 +73,8 @@
             />
           </div>
         </div>
-        <div class="no-of-people">
-          <div class="no-of-people-line">
-            <p>Number of People</p>
-            <div class="error">Can't be zero</div>
-          </div>
-
-          <input
-            class="no-of-people-input"
-            data-no-of-people
-            type="number"
-            placeholder="0"
-          />
-        </div>
       </div>
+
       <div class="container-right">
         <div class="container-right-top">
           <div class="tip-amount">
@@ -82,6 +85,7 @@
             <h2>$<span id="tip-amount">0.00</span></h2>
           </div>
         </div>
+
         <div class="container-right-middle">
           <div class="total">
             <p class="white">Total</p>
@@ -89,6 +93,16 @@
           </div>
           <div class="total">
             <h2>$<span id="total">0.00</span></h2>
+          </div>
+        </div>
+
+        <div class="container-right-bottom">
+          <div class="total">
+            <p class="white">Total</p>
+            <small>/ couple</small>
+          </div>
+          <div class="total">
+            <h2>$<span id="total-per-couple">0.00</span></h2>
           </div>
         </div>
         <button class="button btn-light reset-btn">RESET</button>
