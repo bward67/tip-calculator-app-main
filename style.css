@@ -1,0 +1,217 @@
+:root {
+  --clr-strong-cyan: hsl(172, 67%, 45%);
+
+  --clr-very-dark-cyan: hsl(183, 100%, 15%);
+  --clr-dark-grayish-cyan: hsl(186, 14%, 43%);
+  --clr-grayish-cyan: hsl(184, 14%, 56%);
+  --clr-light-grayish-cyan: hsl(185, 41%, 84%);
+  --clr-very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --br-sml: 0.3rem;
+  --br-lrg: 1rem;
+}
+*,
+*:before,
+*:after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.5rem;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  background-color: var(--clr-light-grayish-cyan);
+  display: grid;
+  place-items: center;
+}
+.main-container {
+  background-color: var(--clr-white);
+  border-radius: var(--br-lrg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+img {
+  max-width: 100%;
+}
+body img {
+  margin-block: 2.5rem;
+}
+h2 {
+  color: var(--clr-strong-cyan);
+}
+h2 span {
+  font-size: 2rem;
+}
+
+.bill-total {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  background-color: var(--clr-very-light-grayish-cyan);
+  border: none;
+  padding: 0.1rem 0.6rem;
+  border-radius: var(--br-sml);
+  width: 100%;
+  cursor: pointer;
+  text-align: right;
+  font-family: inherit;
+  color: var(--clr-very-dark-cyan);
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+p,
+.error {
+  font-size: 1rem;
+  color: var(--clr-dark-grayish-cyan);
+}
+p.white {
+  color: var(--clr-white);
+}
+.no-of-people-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.no-of-people,
+.bill-total {
+  position: relative;
+}
+
+.no-of-people input {
+  background: url(images/icon-person.svg) 10px 12px;
+  /*Must put these top and left amounts here so that they
+  affect only the image and not the input box*/
+  background-color: var(
+    --clr-very-light-grayish-cyan
+  ); /*Must
+  put this again here or it is overwritten with the img*/
+  background-repeat: no-repeat;
+  margin-top: 0.5rem;
+  position: absolute;
+}
+.no-of-people .error {
+  color: red;
+  visibility: hidden;
+}
+
+.no-of-people .error.active {
+  visibility: visible;
+}
+.no-of-people input.active {
+  border: 1px red solid;
+}
+
+.dollar-sign {
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  color: var(--clr-light-grayish-cyan);
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+.select-tip {
+  margin-block: 1.5rem;
+}
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+.button {
+  padding-block: 0.4rem;
+  font-family: inherit;
+  background-color: var(--clr-very-dark-cyan);
+  border: none;
+  color: var(--clr-white);
+  flex: 1 1 30%;
+  border-radius: var(--br-sml);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.button.custom {
+  background-color: var(--clr-very-light-grayish-cyan);
+  outline: none;
+  color: var(--clr-very-dark-cyan);
+}
+.btn-dark {
+  font-weight: 700;
+}
+.btn-dark:hover {
+  background-color: var(--clr-light-grayish-cyan);
+  color: var(--clr-very-dark-cyan);
+}
+.btn-light {
+  background-color: var(--clr-strong-cyan);
+  color: var(--clr-very-dark-cyan);
+}
+.reset-btn {
+  font-weight: 700;
+  font-size: 0.8rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+.reset-btn:hover {
+  background-color: var(--clr-light-grayish-cyan);
+}
+.btn-container button:last-child {
+  background-color: var(--clr-very-light-grayish-cyan);
+  color: var(--clr-very-dark-cyan);
+}
+.btn-container button:last-child:hover {
+  border: 2px solid var(--clr-strong-cyan);
+}
+.container-right {
+  background-color: var(--clr-very-dark-cyan);
+  border-radius: var(--br-lrg);
+  color: var(--clr-white);
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+}
+.container-right-top,
+.container-right-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-right-top p,
+.container-right-middle p {
+  font-size: 1rem;
+  margin-bottom: -0.8rem;
+}
+.tip-amount {
+  margin-bottom: 1rem;
+}
+.value {
+  font-size: 1.7rem;
+  color: var(--clr-strong-cyan);
+}
+small {
+  color: var(--clr-strong-cyan);
+  font-size: 0.8rem;
+}
+
+@media (min-width: 568px) {
+  .main-container {
+    flex-direction: row;
+    width: 800px; /*why does max-width not work here?*/
+  }
+  .container-left {
+    flex-basis: 50%;
+  }
+  .container-right {
+    flex-basis: 50%;
+    margin-top: 0;
+  }
+  .select-tip {
+    margin-block: 0.5rem;
+  }
+  .reset-btn {
+    margin-top: 6rem;
+  }
+}
