@@ -199,7 +199,7 @@ small {
 @media (min-width: 568px) {
   .main-container {
     flex-direction: row;
-    width: 800px; /*why does max-width not work here?*/
+    width: 900px; /*why does max-width not work here?*/
   }
   .container-left {
     flex-basis: 50%;
