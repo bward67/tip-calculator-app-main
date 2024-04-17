@@ -75,6 +75,7 @@ p.white {
 .no-of-people-line {
   display: flex;
   justify-content: space-between;
+  margin-top: 0.8rem;
 }
 
 .no-of-people,
@@ -115,13 +116,13 @@ p.white {
   font-weight: 100;
 }
 .select-tip {
-  margin-block: 1.5rem;
+  margin-block: 3.5rem 0;
 }
 .btn-container {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-block: 1rem;
+  margin-block: 1rem 0;
 }
 .button {
   padding-block: 0.4rem;
@@ -136,7 +137,7 @@ p.white {
 }
 .button.custom {
   background-color: var(--clr-very-light-grayish-cyan);
-  outline: none;
+  /*outline: none; I will leave it for accessibility with tabs*/
   color: var(--clr-very-dark-cyan);
 }
 .btn-dark {
@@ -158,6 +159,7 @@ p.white {
 }
 .reset-btn:hover {
   background-color: var(--clr-light-grayish-cyan);
+  letter-spacing: 6px;
 }
 .btn-container button:last-child {
   background-color: var(--clr-very-light-grayish-cyan);
@@ -171,18 +173,22 @@ p.white {
   border-radius: var(--br-lrg);
   color: var(--clr-white);
   padding: 2rem 1.5rem;
-  margin-top: 2rem;
 }
 .container-right-top,
-.container-right-middle {
+.container-right-middle,
+.container-right-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .container-right-top p,
-.container-right-middle p {
+.container-right-middle p,
+.container-right-bottom p {
   font-size: 1rem;
   margin-bottom: -0.8rem;
+}
+.container-right-middle {
+  margin-bottom: 1rem;
 }
 .tip-amount {
   margin-bottom: 1rem;
@@ -209,9 +215,9 @@ small {
     margin-top: 0;
   }
   .select-tip {
-    margin-block: 0.5rem;
+    margin-top: 5rem;
   }
   .reset-btn {
-    margin-top: 6rem;
+    margin-top: 4rem;
   }
 }

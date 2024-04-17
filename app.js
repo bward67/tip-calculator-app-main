@@ -8,6 +8,7 @@ const tipAmount = document.getElementById("tip-amount");
 //console.log(tipAmount);
 const total = document.getElementById("total");
 //console.log(total);
+const totalPerCouple = document.getElementById("total-per-couple");
 const btns = [...document.querySelector(".btn-container").children];
 //console.log(btns);
 const resetBtn = document.querySelector(".reset-btn");
@@ -45,6 +46,7 @@ const calculateTip = (value) => {
   const totalPerPerson = Number(completeTotal) / Number(inputNoOfPeople.value);
 
   total.textContent = Number(totalPerPerson).toFixed(2);
+  totalPerCouple.textContent = Number(totalPerPerson).toFixed(2) * 2;
 };
 
 //EVENT LISTENERS
@@ -57,6 +59,7 @@ resetBtn.addEventListener("click", () => {
   errorMessage.classList.remove("active");
   noOfPeopleInput.classList.remove("active");
   custom.value = "";
+  totalPerCouple.textContent = "";
 });
 
 custom.addEventListener("input", () => {
